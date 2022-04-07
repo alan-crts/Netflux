@@ -1,5 +1,8 @@
 <template>
-  <div :style="'background-image: url(https://image.tmdb.org/t/p/original' + data.poster_path  + ');'" @click="this.$parent.$parent.showModal(this.data)">
+  <div :style="'background-image: url(https://image.tmdb.org/t/p/original' + data.poster_path  + ');'" @click="this.$parent.$parent.showModal(this.data)" v-if="this.$parent.$parent.showModal">
+          <span>{{ data.vote_average }}/10</span>
+  </div>
+    <div :style="'background-image: url(https://image.tmdb.org/t/p/original' + data.poster_path  + ');'" v-if="!this.$parent.$parent.showModal">
           <span>{{ data.vote_average }}/10</span>
   </div>
 </template>
